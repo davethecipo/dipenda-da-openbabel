@@ -18,11 +18,11 @@ before_install:
   - git checkout openbabel-$OBABEL_VERSION
   - mkdir build-$OBABEL_VERSION
   - cd build-$OBABEL_VERSION
-  - cmake -DPYTHON_BINDINGS=ON -DRUN_SWIG=ON -DCMAKE_INSTALL_PREFIX=/home/travis/.local/ ..
+  - cmake -DPYTHON_BINDINGS=ON -DRUN_SWIG=ON -DCMAKE_INSTALL_PREFIX=/home/travis/virtualenv/python* ..
   - make -j2
   - sudo make install
   - sudo ldconfig
-  - export PYTHONPATH=/home/travis/.local/lib/python*/site-packages
+  - export PYTHONPATH=/home/travis/virtualenv/python*/lib/python*/site-packages
   - echo $PYTHONPATH
   - echo $PATH
 install:
